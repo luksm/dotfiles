@@ -1,0 +1,32 @@
+[user]
+	email = lucas.machado@foresee.com
+	name = Lucas Machado
+[alias]
+	br = branch
+	cm = commit
+	co = checkout
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	st = status
+	sls = stash list
+	df = diff
+	fx = fetch --all -p
+	sn = stash save
+	tbr = rev-parse --abbrev-ref HEAD
+	cp = cherry-pick
+	change = "! git log --oneline --no-decorate --no-merges $(git tag | tail -n 2 | head -n 1)..."
+	pullo = "! git pull origin $(git tbr)"
+	pusho = "! git push origin $(git tbr)"
+[color]
+	ui = auto 
+[core]
+	excludesfile = /Users/lucas.machado/.gitignore_global
+	autocrlf = input
+	whitespace = cr-at-eol
+	editor = vim
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[credential]
+	helper = cache --timeout=300
