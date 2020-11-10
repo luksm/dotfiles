@@ -1,6 +1,6 @@
 [user]
-	email = lucas.machado@foresee.com
 	name = Lucas Machado
+	email = lucas.machado@verint.com
 [alias]
 	br = branch
 	cm = commit
@@ -19,7 +19,7 @@
 [color]
 	ui = auto 
 [core]
-	excludesfile = /Users/lucas.machado/.gitignore_global
+	excludesfile = ~/dotfiles/.gitignore_global
 	autocrlf = input
 	whitespace = cr-at-eol
 	editor = vim
