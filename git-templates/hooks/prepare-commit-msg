@@ -1,5 +1,7 @@
 #!/bin/bash
 
+[[ $(uname) -eq "Darwin" ]] && NL=$'\\\n' || NL="\n"
+
 # Skip on amending messages
 IS_AMEND=$(ps -ocommand= -p $PPID | grep -e '--amend');
 
@@ -24,7 +26,7 @@ if [ -z "$IS_AMEND" ]; then
     LINK="https:\/\/kanasoftware.jira.com\/browse\/$TICKET"
 
     sed -i.bak -e "1s/^/$TICKET $CHANGE: /" \
-    -e "\$s/\$/\n\n$LINK/" \
+    -e "\$s/\$/$NL$NL$LINK/" \
     $1
   fi
 fi
