@@ -8,7 +8,7 @@ IS_AMEND=$(ps -ocommand= -p $PPID | grep -e '--amend');
 if [ -z "$IS_AMEND" ]; then
   # Include any branches for which you wish to disable this script
   if [ -z "$BRANCHES_TO_SKIP" ]; then
-    BRANCHES_TO_SKIP=(master develop release)
+    BRANCHES_TO_SKIP=(main master develop release)
   fi
 
   # Get the current branch name and check if it is excluded
